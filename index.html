@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin and Hover Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            animation: spin 2s infinite;
+        }
+
+        .box::before, .box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid rgba(255, 255, 255, 0);
+            transition: all 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        .box::before {
+            border-left: 0;
+            border-right: 0;
+            border-top: 3px solid rgba(255, 255, 255, 0.6);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .box::after {
+            border-top: 0;
+            border-bottom: 0;
+            border-left: 3px solid rgba(255, 255, 255, 0.6);
+            border-right: 3px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .box:hover {
+            background-color: black;
+            transform: rotate(360deg);
+            animation: none;
+        }
+
+        .box:hover::before, .box:hover::after {
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>Hover over me!</p>
+    </div>
+<br>
+<br>
+<br>
+Name: Noor-Us-Sahar
+<br>
+Class:8
+<br>
+Age:13
+<br>
+Roll No:6412
+</body>
+</html>
